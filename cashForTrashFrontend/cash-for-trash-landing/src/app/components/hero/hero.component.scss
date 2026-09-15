@@ -1,0 +1,302 @@
+// ==========================================================================
+// CashForTrash — Hero Section
+// "من كيس الزبالة لفلوس في إيدك"
+// Fonts: Cairo (headline) + Tajawal (body) — link both via Google Fonts,
+// or consolidate with navbar.scss into a shared _variables.scss later.
+// ==========================================================================
+
+// ---- Variables -----------------------------------------------------------
+$bg:            #F4F7F1;   // pale sage, not the generic warm cream
+$ink:           #14241B;   // near-black with a green cast
+$ink-muted:     #4B5D50;
+
+$green:         #1F7A4D;
+$green-deep:    #123D26;
+$green-pale:    #DCEFE0;
+$gold:          #C99A2E;   // the one "cash" accent — used sparingly
+$white:         #FFFFFF;
+$mobile-border:#352a2a;
+$font-heading:  'Cairo', sans-serif;
+$font-body:     'Tajawal', sans-serif;
+
+$radius-lg:     28px;
+$radius-pill:   50px;
+
+$shadow-card:   0 20px 45px rgba(18, 61, 38, 0.16);
+
+// ---- Hero ------------------------------------------------------------------
+.hero {
+  direction: rtl;
+  background: $white;
+  overflow: hidden;
+  position: relative;
+  padding: 88px 0 64px;
+.hero {
+  &__feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    color: #2d8a43;
+    font-size: 16px;
+
+    border-radius: 10px;
+    background: rgba(45, 138, 67, 0.08);
+  }
+
+  &__stat-icon {
+    i {
+      font-size: 16px;
+      color: #2d8a43;
+    }
+  }
+
+  &__badge {
+    i {
+      color: #2d8a43;
+    }
+  }
+}
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  // ---- Text column ----
+  &__content {
+    flex: 1 1 480px;
+    min-width: 0;
+    padding-right: 3%;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: $green-pale;
+    color: $green-deep;
+    font-family: $font-body;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: $radius-pill;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.25;
+    color: $ink;
+    margin: 0 0 22px;
+    max-width: 14ch;
+  }
+
+  &__text {
+    font-family: $font-body;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: $ink-muted;
+    max-width: 46ch;
+    margin: 0 0 36px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, lighten($green, 8%), $green);
+    color: $white;
+    font-family: $font-body;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 15px 34px;
+    border-radius: $radius-pill;
+    box-shadow: 0 10px 24px rgba(31, 122, 77, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(31, 122, 77, 0.36);
+    }
+  }
+
+  &__link {
+    font-family: $font-body;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: $ink;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 3px;
+    transition: border-color 0.25s ease;
+
+    &:hover {
+      border-color: $green;
+    }
+  }
+
+  &__features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    margin: 0;
+    padding: 24px 0 0;
+    border-top: 1px solid rgba(18, 61, 38, 0.12);
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: $font-body;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: $ink;
+    }
+  }
+
+  &__feature-icon {
+    font-size: 1.1rem;
+  }
+
+  // ---- Visual column ----
+  &__visual {
+    position: relative;
+    flex: 1 1 420px;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 520px;
+  }
+
+  &__blob {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle at 35% 30%, $green-pale, transparent 70%);
+    border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
+    z-index: 0;
+  }
+
+  &__phone {
+    position: relative;
+    z-index: 1;
+    width: 250px;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+    border: 6px solid $mobile-border;
+    transform: rotate(-6deg);
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__plant {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    bottom: -18px;
+    right: -6px;
+    filter: drop-shadow(0 14px 20px rgba(18, 61, 38, 0.25));
+  }
+
+  &__stat-card {
+    position: absolute;
+    z-index: 3;
+    top: 36px;
+    left: -4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: $white;
+    padding: 12px 18px;
+    border-radius: 18px;
+    box-shadow: $shadow-card;
+    font-family: $font-body;
+
+    strong {
+      display: block;
+      color: $ink;
+      font-size: 1.05rem;
+    }
+
+    span {
+      display: block;
+      color: $ink-muted;
+      font-size: 0.78rem;
+    }
+  }
+
+  &__stat-icon {
+    font-size: 1.4rem;
+  }
+
+  // ---- Responsive ----
+  @media (max-width: 960px) {
+    &__container {
+      flex-direction: column;
+      gap: 56px;
+      text-align: center;
+      padding-right: auto;
+    }
+
+    &__title,
+    &__text {
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__actions {
+      justify-content: center;
+    }
+
+    &__features {
+      justify-content: center;
+      border-top: none;
+      padding-top: 0;
+    }
+
+    &__visual {
+      min-height: 420px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 64px 0 48px;
+
+    &__phone {
+      width: 200px;
+    }
+
+    &__plant {
+      width: 150px;
+    }
+
+    &__stat-card {
+      padding: 10px 14px;
+    }
+  }
+}
